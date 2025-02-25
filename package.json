@@ -1,0 +1,24 @@
+{
+  "name": "mate-fisher",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "chainstack": "node mempool_providers/chainstack.svc.js",
+    "blocknative": "node mempool_providers/blocknative.svc.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.6",
+    "bnc-sdk": "^4.6.4",
+    "dotenv": "^16.4.1",
+    "ethers": "^6.11.1",
+    "web3": "^4.5.0",
+    "ws": "^8.16.0"
+  }
+}
