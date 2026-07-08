@@ -1,4 +1,5 @@
 import { defineHandler } from "nitro";
+import { readBody } from "h3";
 import { execute, type ISerializableSignedAction } from "@evvm/evvm-js";
 import { getEvvmSigner } from "#server/utils/evvm.ts";
 
@@ -9,7 +10,10 @@ interface IBody {
 
 export default defineHandler(async (event) => {
   try {
-    const body = (await event.req.json()) as IBody;
+    const body = await readBody<IBody>(event);
+
+    if (!body) throw { message: "Missing body", status: 400 };
+
     if (!body.signedAction)
       throw { message: "Missing signedAction", status: 400 };
     const signer = await getEvvmSigner();
