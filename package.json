@@ -13,5 +13,10 @@
     "@types/node": "latest",
     "nitro": "latest",
     "typescript": "latest"
+  },
+  "dependencies": {
+    "@evvm/evvm-js": "^0.1.34",
+    "ethers": "^6.17.0",
+    "zod": "^4.4.3"
   }
 }
