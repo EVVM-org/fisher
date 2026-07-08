@@ -14,7 +14,7 @@ export default defineHandler(async (event) => {
       throw { message: "Missing signedAction", status: 400 };
     const signer = await getEvvmSigner();
 
-    const txHash = await execute(signer, body.signedAction);
+    const txHash = await execute(signer, body.signedAction, { gas: body.gas });
 
     return Response.json({
       success: true,
