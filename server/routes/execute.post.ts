@@ -1,9 +1,10 @@
 import { defineHandler } from "nitro";
-import { getEvvmSigner } from "./utils/evvm";
 import { execute, type ISerializableSignedAction } from "@evvm/evvm-js";
+import { getEvvmSigner } from "#server/utils/evvm.ts";
 
 interface IBody {
   signedAction: ISerializableSignedAction<any>;
+  gas?: number;
 }
 
 export default defineHandler(async (event) => {

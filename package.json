@@ -1,5 +1,5 @@
 {
-  "name": "nitro-starter",
+  "name": "evvm-fisher",
   "type": "module",
   "scripts": {
     "build": "nitro build",
